@@ -19,4 +19,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Cmpnte_Proyecto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Actividad_Hija.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Actividad__Grupo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
