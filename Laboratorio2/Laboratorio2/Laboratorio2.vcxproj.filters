@@ -23,10 +23,13 @@
     <ClInclude Include="Cmpnte_Proyecto.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Actividad_Hija.h">
+    <ClInclude Include="Actividad__Grupo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Actividad__Grupo.h">
+    <ClInclude Include="Tipo_Actividad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Actividad_Hoja.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

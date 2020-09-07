@@ -143,8 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actividad__Grupo.h" />
-    <ClInclude Include="Actividad_Hija.h" />
+    <ClInclude Include="Actividad_Hoja.h" />
     <ClInclude Include="Cmpnte_Proyecto.h" />
+    <ClInclude Include="Tipo_Actividad.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
