@@ -11,9 +11,6 @@ public:
 	~Actividad_Hoja();
 
 
-	void setPadre(Cmpnte_Proyecto* padre) override;
-	Cmpnte_Proyecto getPadre() override;
-
 	void agregar(Cmpnte_Proyecto* actividad) override;
 
 	void eliminar() override;
@@ -48,15 +45,6 @@ Actividad_Hoja::Actividad_Hoja()
 
 Actividad_Hoja::~Actividad_Hoja()
 {
-}
-
-inline void Actividad_Hoja::setPadre(Cmpnte_Proyecto* padre)
-{
-}
-
-inline Cmpnte_Proyecto Actividad_Hoja::getPadre()
-{
-	return Cmpnte_Proyecto();
 }
 
 inline void Actividad_Hoja::agregar(Cmpnte_Proyecto* actividad)

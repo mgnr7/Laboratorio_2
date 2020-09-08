@@ -13,10 +13,6 @@ public:
 	Actividad_Grupo();
 	~Actividad_Grupo();
 
-
-	void setPadre(Cmpnte_Proyecto* padre) override;
-	Cmpnte_Proyecto getPadre() override;
-
 	void agregar(Cmpnte_Proyecto* actividad) override;
 
 	void eliminar() override;
@@ -53,15 +49,6 @@ Actividad_Grupo::Actividad_Grupo()
 
 Actividad_Grupo::~Actividad_Grupo()
 {
-}
-
-inline void Actividad_Grupo::setPadre(Cmpnte_Proyecto* padre)
-{
-}
-
-inline Cmpnte_Proyecto Actividad_Grupo::getPadre()
-{
-	return Cmpnte_Proyecto();
 }
 
 inline void Actividad_Grupo::agregar(Cmpnte_Proyecto* actividad)
