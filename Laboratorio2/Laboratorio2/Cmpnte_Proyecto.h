@@ -6,7 +6,7 @@ class Cmpnte_Proyecto
 {
 public:
 
-	virtual Actividad_Hoja* padre() = 0;
+	virtual Cmpnte_Proyecto* padre() = 0;
 
 
 };

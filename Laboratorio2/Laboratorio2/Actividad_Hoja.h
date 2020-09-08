@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-class Actividad_Hoja
+class Actividad_Hoja : public Cmpnte_Proyecto
 {
 public:
 	Actividad_Hoja();

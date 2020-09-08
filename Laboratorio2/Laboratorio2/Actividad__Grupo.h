@@ -7,7 +7,7 @@ using namespace std;
 #include "Actividad_Hoja.h"
 
 
-class Actividad_Grupo 
+class Actividad_Grupo : public Cmpnte_Proyecto
 {
 public:
 	Actividad_Grupo();
