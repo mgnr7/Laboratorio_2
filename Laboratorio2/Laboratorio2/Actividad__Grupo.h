@@ -45,7 +45,7 @@ private:
 	
 	string descripcion;
 
-	vector <Actividad_Hoja> actividades;
+	vector < Cmpnte_Proyecto > actividades;
 
 };
 
@@ -69,6 +69,7 @@ inline Cmpnte_Proyecto* Actividad_Grupo::getPadre()
 
 inline void Actividad_Grupo::agregar(Cmpnte_Proyecto* actividad)
 {
+	actividades.push_back(actividad);
 }
 
 inline void Actividad_Grupo::eliminar()

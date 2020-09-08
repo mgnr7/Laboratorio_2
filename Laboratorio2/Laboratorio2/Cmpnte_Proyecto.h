@@ -25,6 +25,4 @@ public:
 	virtual void setDescripcion(string d) = 0;
 	virtual string getDescripcion() = 0;
 
-
-
 };
