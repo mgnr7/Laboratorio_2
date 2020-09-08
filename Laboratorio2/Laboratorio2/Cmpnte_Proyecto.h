@@ -2,19 +2,17 @@
 #include <string>
 using namespace std;
 
-class Actividad_Hoja;
+class Actividad_Grupo;
 
 class Cmpnte_Proyecto 
 {
 protected:
-	Cmpnte_Proyecto* padre;
+	Actividad_Grupo* padre;
 
 public:
 
-	virtual void setPadre(Cmpnte_Proyecto* p) = 0;
+	virtual void setPadre(Actividad_Grupo* p) = 0;
 	virtual Cmpnte_Proyecto* getPadre() = 0;
-
-	virtual void agregar(Cmpnte_Proyecto* actividad) = 0;
 	
 	virtual void eliminar() = 0;
 

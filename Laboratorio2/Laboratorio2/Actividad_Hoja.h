@@ -59,12 +59,14 @@ inline Cmpnte_Proyecto* Actividad_Hoja::getPadre()
 	return padre;
 }
 
-inline void Actividad_Hoja::agregar(Cmpnte_Proyecto* actividad)
-{
-}
-
 inline void Actividad_Hoja::eliminar()
 {
+	if (padre != NULL) 
+	{
+		padre->eliminarSubActividad(nombre);
+	}
+
+	~Actividad_Hoja();
 }
 
 inline void Actividad_Hoja::setNombre(string n)

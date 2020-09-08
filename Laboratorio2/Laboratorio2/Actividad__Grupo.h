@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 #include "Cmpnte_Proyecto.h"
@@ -28,6 +29,8 @@ public:
 
 	void setDescripcion(string d) override;
 	string getDescripcion() override;
+
+	void eliminarSubActividad(string nombre);
 
 private:
 	
@@ -70,6 +73,11 @@ inline void Actividad_Grupo::agregar(Cmpnte_Proyecto* actividad)
 
 inline void Actividad_Grupo::eliminar()
 {
+	if (padre != NULL)
+	{
+		padre->eliminarSubActividad(nombre);
+	}
+	~Actividad_Grupo();
 }
 
 inline void Actividad_Grupo::setNombre(string n)
@@ -100,4 +108,12 @@ inline void Actividad_Grupo::setDescripcion(string d)
 inline string Actividad_Grupo::getDescripcion()
 {
 	return descripcion;
+}
+
+inline void Actividad_Grupo::eliminarSubActividad(string nombre)
+{
+	if (find(actividades.begin(), actividades.end(), nombre) != actividades.end()) 
+	{
+		actividades.erase(find(actividades.begin(), actividades.end(), nombre));
+	}
 }
