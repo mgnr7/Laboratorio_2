@@ -8,8 +8,6 @@ class Cmpnte_Proyecto
 {
 public:
 
-	virtual Cmpnte_Proyecto* padre() = 0;
-
 	virtual void setPadre(Cmpnte_Proyecto* padre) = 0;
 	virtual Cmpnte_Proyecto getPadre() = 0;
 
