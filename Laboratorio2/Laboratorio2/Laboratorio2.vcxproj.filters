@@ -32,5 +32,14 @@
     <ClInclude Include="Actividad_Hoja.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Controlador_Proyectos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Proyecto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tipo_Proyecto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
