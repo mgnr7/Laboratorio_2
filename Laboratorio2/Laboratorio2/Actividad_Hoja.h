@@ -2,6 +2,8 @@
 #include <string>
 using namespace std;
 
+#include "Cmpnte_Proyecto.h"
+
 class Actividad_Hoja : public Cmpnte_Proyecto
 {
 public:
