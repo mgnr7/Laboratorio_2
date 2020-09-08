@@ -6,7 +6,13 @@ class Actividad_Hoja;
 
 class Cmpnte_Proyecto 
 {
+protected:
+	Cmpnte_Proyecto* padre;
+
 public:
+
+	virtual void setPadre(Cmpnte_Proyecto* p) = 0;
+	virtual Cmpnte_Proyecto* getPadre() = 0;
 
 	virtual void agregar(Cmpnte_Proyecto* actividad) = 0;
 	

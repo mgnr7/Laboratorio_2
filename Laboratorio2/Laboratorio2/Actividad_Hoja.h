@@ -10,6 +10,8 @@ public:
 	Actividad_Hoja();
 	~Actividad_Hoja();
 
+	void setPadre(Cmpnte_Proyecto* p);
+	Cmpnte_Proyecto* getPadre();
 
 	void agregar(Cmpnte_Proyecto* actividad) override;
 
@@ -47,6 +49,16 @@ Actividad_Hoja::~Actividad_Hoja()
 {
 }
 
+inline void Actividad_Hoja::setPadre(Cmpnte_Proyecto* p)
+{
+	this->padre = p;
+}
+
+inline Cmpnte_Proyecto* Actividad_Hoja::getPadre()
+{
+	return padre;
+}
+
 inline void Actividad_Hoja::agregar(Cmpnte_Proyecto* actividad)
 {
 }
@@ -57,27 +69,30 @@ inline void Actividad_Hoja::eliminar()
 
 inline void Actividad_Hoja::setNombre(string n)
 {
+	nombre = n;
 }
 
 inline string Actividad_Hoja::getNombre()
 {
-	return string();
+	return nombre;
 }
 
 inline void Actividad_Hoja::setResponsable(string r)
 {
+	responsable = r;
 }
 
 inline string Actividad_Hoja::getResponsable()
 {
-	return string();
+	return responsable;
 }
 
 inline void Actividad_Hoja::setDescripcion(string d)
 {
+	descripcion = d;
 }
 
 inline string Actividad_Hoja::getDescripcion()
 {
-	return string();
+	return descripcion;
 }

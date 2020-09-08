@@ -13,6 +13,9 @@ public:
 	Actividad_Grupo();
 	~Actividad_Grupo();
 
+	void setPadre(Cmpnte_Proyecto* p);
+	Cmpnte_Proyecto* getPadre();
+
 	void agregar(Cmpnte_Proyecto* actividad) override;
 
 	void eliminar() override;
@@ -51,6 +54,16 @@ Actividad_Grupo::~Actividad_Grupo()
 {
 }
 
+inline void Actividad_Grupo::setPadre(Cmpnte_Proyecto* p)
+{
+	this->padre = p;
+}
+
+inline Cmpnte_Proyecto* Actividad_Grupo::getPadre()
+{
+	return padre;
+}
+
 inline void Actividad_Grupo::agregar(Cmpnte_Proyecto* actividad)
 {
 }
@@ -61,27 +74,30 @@ inline void Actividad_Grupo::eliminar()
 
 inline void Actividad_Grupo::setNombre(string n)
 {
+	nombre = n;
 }
 
 inline string Actividad_Grupo::getNombre()
 {
-	return string();
+	return nombre;
 }
 
 inline void Actividad_Grupo::setResponsable(string r)
 {
+	responsable = r;
 }
 
 inline string Actividad_Grupo::getResponsable()
 {
-	return string();
+	return responsable;
 }
 
 inline void Actividad_Grupo::setDescripcion(string d)
 {
+	descripcion = d;
 }
 
 inline string Actividad_Grupo::getDescripcion()
 {
-	return string();
+	return descripcion;
 }
