@@ -142,7 +142,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Actividad__Grupo.h" />
+    <ClInclude Include="Actividad_Grupo.h" />
     <ClInclude Include="Actividad_Hoja.h" />
     <ClInclude Include="Cmpnte_Proyecto.h" />
     <ClInclude Include="Controlador_Proyectos.h" />

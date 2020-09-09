@@ -23,9 +23,6 @@
     <ClInclude Include="Cmpnte_Proyecto.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Actividad__Grupo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Tipo_Actividad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -39,6 +36,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tipo_Proyecto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Actividad_Grupo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
