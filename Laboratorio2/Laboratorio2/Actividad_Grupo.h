@@ -26,6 +26,7 @@ public:
 
 	void setResponsable(string r) override;
 	string getResponsable() override;
+	void setResponsableAuto() override;
 
 	void setDescripcion(string d) override;
 	string getDescripcion() override;
@@ -99,6 +100,22 @@ inline void Actividad_Grupo::setResponsable(string r)
 inline string Actividad_Grupo::getResponsable()
 {
 	return responsable;
+}
+
+inline void Actividad_Grupo::setResponsableAuto()
+{
+	if (padre != NULL)
+	{
+		if (!padre->getResponsable().empty())
+		{
+			responsable = padre->getResponsable();
+		}
+		else
+		{
+			padre->setResponsableAuto();
+			responsable = padre->getResponsable();
+		}
+	}
 }
 
 inline void Actividad_Grupo::setDescripcion(string d)

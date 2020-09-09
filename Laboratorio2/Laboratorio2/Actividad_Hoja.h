@@ -13,8 +13,6 @@ public:
 	void setPadre(Cmpnte_Proyecto* p);
 	Cmpnte_Proyecto* getPadre();
 
-	void agregar(Cmpnte_Proyecto* actividad) override;
-
 	void eliminar() override;
 
 	void setNombre(string n) override;
@@ -22,6 +20,7 @@ public:
 	 
 	void setResponsable(string r) override;
 	string getResponsable() override;
+	void setResponsableAuto() override;
 
 	void setDescripcion(string d) override;
 	string getDescripcion() override;
@@ -43,6 +42,12 @@ private:
 
 Actividad_Hoja::Actividad_Hoja()
 {
+	responsable = "";
+	nombre = "";
+	fecha_plan_ini = "";
+	fecha_plan_fin = "";
+	fecha_real_ini = "";
+	fecha_real_fin = "";
 }
 
 Actividad_Hoja::~Actividad_Hoja()
@@ -87,6 +92,22 @@ inline void Actividad_Hoja::setResponsable(string r)
 inline string Actividad_Hoja::getResponsable()
 {
 	return responsable;
+}
+
+inline void Actividad_Hoja::setResponsableAuto()
+{
+	if (padre != NULL) 
+	{
+		if (!padre->getResponsable().empty()) 
+		{
+			responsable = padre->getResponsable();
+		}
+		else 
+		{
+			padre->setResponsableAuto();
+			responsable = padre->getResponsable();
+		}
+	}
 }
 
 inline void Actividad_Hoja::setDescripcion(string d)

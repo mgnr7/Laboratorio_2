@@ -21,6 +21,7 @@ public:
 
 	virtual void setResponsable(string r) = 0;
 	virtual string getResponsable() = 0;
+	virtual void setResponsableAuto() = 0;
 
 	virtual void setDescripcion(string d) = 0;
 	virtual string getDescripcion() = 0;
