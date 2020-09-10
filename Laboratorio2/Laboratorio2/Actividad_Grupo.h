@@ -14,8 +14,8 @@ public:
 	Actividad_Grupo();
 	~Actividad_Grupo();
 
-	void setPadre(Cmpnte_Proyecto* p);
-	Cmpnte_Proyecto* getPadre();
+	void setPadre(Actividad_Grupo* p);
+	Actividad_Grupo* getPadre();
 
 	void agregar(Cmpnte_Proyecto* actividad) override;
 
@@ -52,18 +52,24 @@ private:
 
 Actividad_Grupo::Actividad_Grupo() 
 {
+	responsable = "";
+	nombre = "";
+	fecha_plan_ini = "";
+	fecha_plan_fin = "";
+	fecha_real_ini = "";
+	fecha_real_fin = "";
 }
 
 Actividad_Grupo::~Actividad_Grupo()
 {
 }
 
-inline void Actividad_Grupo::setPadre(Cmpnte_Proyecto* p)
+inline void Actividad_Grupo::setPadre(Actividad_Grupo* p)
 {
 	this->padre = p;
 }
 
-inline Cmpnte_Proyecto* Actividad_Grupo::getPadre()
+inline Actividad_Grupo* Actividad_Grupo::getPadre()
 {
 	return padre;
 }

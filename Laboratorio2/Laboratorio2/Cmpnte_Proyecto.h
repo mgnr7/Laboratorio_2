@@ -12,7 +12,7 @@ protected:
 public:
 
 	virtual void setPadre(Actividad_Grupo* p) = 0;
-	virtual Cmpnte_Proyecto* getPadre() = 0;
+	virtual Actividad_Grupo* getPadre() = 0;
 	
 	virtual void eliminar() = 0;
 

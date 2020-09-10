@@ -10,8 +10,8 @@ public:
 	Actividad_Hoja();
 	~Actividad_Hoja();
 
-	void setPadre(Cmpnte_Proyecto* p);
-	Cmpnte_Proyecto* getPadre();
+	void setPadre(Actividad_Grupo* p);
+	Actividad_Grupo* getPadre();
 
 	void eliminar() override;
 
@@ -54,12 +54,12 @@ Actividad_Hoja::~Actividad_Hoja()
 {
 }
 
-inline void Actividad_Hoja::setPadre(Cmpnte_Proyecto* p)
+inline void Actividad_Hoja::setPadre(Actividad_Grupo* p)
 {
 	this->padre = p;
 }
 
-inline Cmpnte_Proyecto* Actividad_Hoja::getPadre()
+inline Actividad_Grupo* Actividad_Hoja::getPadre()
 {
 	return padre;
 }
