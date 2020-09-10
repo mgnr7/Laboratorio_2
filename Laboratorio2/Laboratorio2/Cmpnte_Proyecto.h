@@ -26,4 +26,10 @@ public:
 	virtual void setDescripcion(string d) = 0;
 	virtual string getDescripcion() = 0;
 
+	virtual void setFechaInicio(string f) = 0;
+	virtual string getFechaInicio() = 0;
+
+	virtual void setFechaFinal(string f) = 0;
+	virtual string getFechaFinal() = 0;
+
 };

@@ -14,10 +14,10 @@ public:
 	Actividad_Grupo();
 	~Actividad_Grupo();
 
-	void setPadre(Actividad_Grupo* p);
-	Actividad_Grupo* getPadre();
+	void setPadre(Actividad_Grupo* p) override;
+	Actividad_Grupo* getPadre() override;
 
-	void agregar(Cmpnte_Proyecto* actividad) override;
+	void agregar(Cmpnte_Proyecto* actividad)
 
 	void eliminar() override;
 
@@ -32,6 +32,9 @@ public:
 	string getDescripcion() override;
 
 	void eliminarSubActividad(string nombre);
+
+	void calcularFechaRealInicio();
+	void calcularFechaRealFin();
 
 private:
 	
@@ -140,4 +143,16 @@ inline void Actividad_Grupo::eliminarSubActividad(string nombre)
 	{
 		actividades.erase(find(actividades.begin(), actividades.end(), nombre));
 	}
+}
+
+inline void Actividad_Grupo::calcularFechaRealInicio()
+{
+	for (auto act : actividades) 
+	{
+		
+	}
+}
+
+inline void Actividad_Grupo::calcularFechaRealFin()
+{
 }

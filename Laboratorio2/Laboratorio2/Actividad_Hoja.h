@@ -25,6 +25,12 @@ public:
 	void setDescripcion(string d) override;
 	string getDescripcion() override;
 
+	void setFechaInicio(string f) override;
+	string getFechaInicio() override;
+
+	void setFechaFinal(string f) override;
+	string getFechaFinal() override;
+
 private:
 
 	string responsable;
@@ -118,4 +124,24 @@ inline void Actividad_Hoja::setDescripcion(string d)
 inline string Actividad_Hoja::getDescripcion()
 {
 	return descripcion;
+}
+
+inline void Actividad_Hoja::setFechaInicio(string f)
+{
+	fecha_plan_ini = f;
+}
+
+inline string Actividad_Hoja::getFechaInicio()
+{
+	return fecha_plan_ini;
+}
+
+inline void Actividad_Hoja::setFechaFinal(string f)
+{
+	fecha_plan_fin = f;
+}
+
+inline string Actividad_Hoja::getFechaFinal()
+{
+	return fecha_plan_fin;
 }
