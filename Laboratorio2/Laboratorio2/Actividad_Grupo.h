@@ -31,10 +31,20 @@ public:
 	void setDescripcion(string d) override;
 	string getDescripcion() override;
 
+	void setFechaRealInicio(string i) override;
+	string getFechaRealInicio() override;
+
+	void setFechaRealFin(string f) override;
+	string getFechaRealFin() override;
+
+
 	void eliminarSubActividad(string nombre);
 
 	void calcularFechaRealInicio();
 	void calcularFechaRealFin();
+
+	void calcularFechaPlanInicio();
+	void calcularFechaPlanFin();
 
 private:
 	
@@ -42,6 +52,7 @@ private:
 
 	string nombre;
 	//Por ahora estoy poniendo las fechas como strings
+	//Se asume que el formato es YYYY-MM-DD
 	string fecha_plan_ini;
 	string fecha_plan_fin;
 	string fecha_real_ini;
@@ -137,6 +148,27 @@ inline string Actividad_Grupo::getDescripcion()
 	return descripcion;
 }
 
+inline void Actividad_Grupo::setFechaRealInicio(string i)
+{
+	fecha_real_ini = i;
+}
+
+inline string Actividad_Grupo::getFechaRealInicio()
+{
+	return fecha_real_ini;
+}
+
+inline void Actividad_Grupo::setFechaRealFin(string f)
+{
+	fecha_real_fin = f;
+}
+
+inline string Actividad_Grupo::getFechaRealFin()
+{
+	return fecha_real_fin;
+}
+
+
 inline void Actividad_Grupo::eliminarSubActividad(string nombre)
 {
 	if (find(actividades.begin(), actividades.end(), nombre) != actividades.end()) 
@@ -145,14 +177,150 @@ inline void Actividad_Grupo::eliminarSubActividad(string nombre)
 	}
 }
 
+
+/*Se asume que ya las actividades hijas tienen las fechas. 
+La idea es llamar estos metodos desde el controlador en orden*/
+
 inline void Actividad_Grupo::calcularFechaRealInicio()
 {
-	for (auto act : actividades) 
+	string fechaMenor = actividades.at(0).getFechaRealInicio();
+
+	vector < Cmpnte_Proyecto >::iterator actIterator;
+	for (actIterator = actividades.begin() + 1; actIterator != actividades.end(); actIterator++)
 	{
-		
+		string fechaActual = &actIterator->getFechaRealInicio();
+		int yactual = atoi(fechaActual.substr(0, 4);
+		int ymenor = atoi(fechaMenor.substr(0, 4);
+
+		if ( yactual < ymenor)
+		{
+			fechaMenor = fechaActual;
+		}
+		if (yactual == ymenor)
+		{
+			int mactual = atoi(fechaActual.substr(5, 2);
+			int mmenor = atoi(fechaMenor.substr(5,2));
+			if (mactual < mmenor)
+			{
+				fechaMenor = fechaActual;
+			}
+			if (mactual == mmenor) 
+			{
+				int dactual = atoi(fechaActual.substr(8, 2);
+				int dmenor = atoi(fechaMenor.substr(8, 2));
+				if (dactual < dmenor) 
+				{
+					fechaMenor = fechaActual;
+				}
+			}
+		}
 	}
 }
 
 inline void Actividad_Grupo::calcularFechaRealFin()
 {
+	string fechaMayor = actividades.at(0).getFechaRealFin();
+
+	vector < Cmpnte_Proyecto >::iterator actIterator;
+	for (actIterator = actividades.begin() + 1; actIterator != actividades.end(); actIterator++)
+	{
+		string fechaActual = &actIterator->getFechaRealFin();
+		int yactual = atoi(fechaActual.substr(0, 4);
+		int ymayor = atoi(fechaMayor.substr(0, 4);
+
+		if (yactual > ymayor)
+		{
+			fechaMayor = fechaActual;
+		}
+		if (yactual == ymenor)
+		{
+			int mactual = atoi(fechaActual.substr(5, 2);
+			int mmayor = atoi(fechaMayor.substr(5, 2));
+			if (mactual > mmayor)
+			{
+				fechaMayor = fechaActual;
+			}
+			if (mactual == mayor)
+			{
+				int dactual = atoi(fechaActual.substr(8, 2);
+				int dmayor = atoi(fechaMayor.substr(8, 2));
+				if (dactual < dmayor)
+				{
+					fechaMayor = fechaActual;
+				}
+			}
+		}
+	}
+}
+
+inline void Actividad_Grupo::calcularFechaPlanInicio()
+{
+	string fechaMenor = actividades.at(0).getFechaInicio();
+
+	vector < Cmpnte_Proyecto >::iterator actIterator;
+	for (actIterator = actividades.begin() + 1; actIterator != actividades.end(); actIterator++)
+	{
+		string fechaActual = &actIterator->getFechaInicio();
+		int yactual = atoi(fechaActual.substr(0, 4);
+		int ymenor = atoi(fechaMenor.substr(0, 4);
+
+		if (yactual < ymenor)
+		{
+			fechaMenor = fechaActual;
+		}
+		if (yactual == ymenor)
+		{
+			int mactual = atoi(fechaActual.substr(5, 2);
+			int mmenor = atoi(fechaMenor.substr(5, 2));
+			if (mactual < mmenor)
+			{
+				fechaMenor = fechaActual;
+			}
+			if (mactual == mmenor)
+			{
+				int dactual = atoi(fechaActual.substr(8, 2);
+				int dmenor = atoi(fechaMenor.substr(8, 2));
+				if (dactual < dmenor)
+				{
+					fechaMenor = fechaActual;
+				}
+			}
+		}
+	}
+}
+
+inline void Actividad_Grupo::calcularFechaPlanFin()
+{
+	string fechaMayor = actividades.at(0).getFechaFinal();
+
+	vector < Cmpnte_Proyecto >::iterator actIterator;
+	for (actIterator = actividades.begin() + 1; actIterator != actividades.end(); actIterator++)
+	{
+		string fechaActual = &actIterator->getFechaFinal();
+		int yactual = atoi(fechaActual.substr(0, 4);
+		int ymayor = atoi(fechaMayor.substr(0, 4);
+
+		if (yactual > ymayor)
+		{
+			fechaMayor = fechaActual;
+		}
+		if (yactual == ymenor)
+		{
+			int mactual = atoi(fechaActual.substr(5, 2);
+			int mmayor = atoi(fechaMayor.substr(5, 2));
+			if (mactual > mmayor)
+			{
+				fechaMayor = fechaActual;
+			}
+			if (mactual == mayor)
+			{
+				int dactual = atoi(fechaActual.substr(8, 2);
+				int dmayor = atoi(fechaMayor.substr(8, 2));
+				if (dactual < dmayor)
+				{
+					fechaMayor = fechaActual;
+				}
+			}
+		}
+	}
 }
