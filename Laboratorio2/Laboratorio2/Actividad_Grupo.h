@@ -215,6 +215,8 @@ inline void Actividad_Grupo::calcularFechaRealInicio()
 			}
 		}
 	}
+
+	fecha_real_ini = fechaMenor;
 }
 
 inline void Actividad_Grupo::calcularFechaRealFin()
@@ -251,6 +253,9 @@ inline void Actividad_Grupo::calcularFechaRealFin()
 			}
 		}
 	}
+
+	fecha_real_fin = fechaMayor;
+
 }
 
 inline void Actividad_Grupo::calcularFechaPlanInicio()
@@ -287,6 +292,8 @@ inline void Actividad_Grupo::calcularFechaPlanInicio()
 			}
 		}
 	}
+
+	fecha_plan_ini = fechaMenor;
 }
 
 inline void Actividad_Grupo::calcularFechaPlanFin()
@@ -323,4 +330,6 @@ inline void Actividad_Grupo::calcularFechaPlanFin()
 			}
 		}
 	}
+
+	fecha_plan_fin = fechaMayor;
 }
