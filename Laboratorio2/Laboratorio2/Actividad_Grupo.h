@@ -17,7 +17,7 @@ public:
 	void setPadre(Actividad_Grupo* p) override;
 	Actividad_Grupo* getPadre() override;
 
-	void agregar(Cmpnte_Proyecto* actividad)
+	void agregar(Cmpnte_Proyecto& actividad)
 
 	void eliminar() override;
 
@@ -89,7 +89,7 @@ inline Actividad_Grupo* Actividad_Grupo::getPadre()
 	return padre;
 }
 
-inline void Actividad_Grupo::agregar(Cmpnte_Proyecto* actividad)
+inline void Actividad_Grupo::agregar(Cmpnte_Proyecto& actividad)
 {
 	actividades.push_back(actividad);
 }

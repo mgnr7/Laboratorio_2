@@ -11,8 +11,6 @@ class Cmpnte_Proyecto
 protected:
 	Actividad_Grupo* padre;
 
-	
-
 public:
 	Cmpnte_Proyecto();
 	~Cmpnte_Proyecto();

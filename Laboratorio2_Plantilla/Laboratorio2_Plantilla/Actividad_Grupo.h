@@ -13,6 +13,9 @@ public:
 	~Actividad_Grupo();
 
 	void eliminarSubActividad(string nombre);
+	void agregar(Cmpnte_Proyecto& actividad);
+
+
 
 private:
 	vector < Cmpnte_Proyecto > actividades;
@@ -37,5 +40,10 @@ inline void Actividad_Grupo::eliminarSubActividad(string nombre)
 			actIterator = actividades.end();
 		}
 	}
+}
+
+inline void Actividad_Grupo::agregar(Cmpnte_Proyecto& actividad)
+{
+	actividades.push_back(actividad);
 }
 

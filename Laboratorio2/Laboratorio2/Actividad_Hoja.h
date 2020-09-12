@@ -10,8 +10,8 @@ public:
 	Actividad_Hoja(string planInicio, string planFin, string realInicio, string realFin);
 	~Actividad_Hoja();
 
-	void setPadre(Actividad_Grupo* p);
-	Actividad_Grupo* getPadre();
+	void setPadre(Actividad_Grupo* p) override;
+	Actividad_Grupo* getPadre() override;
 
 	void eliminar() override;
 
