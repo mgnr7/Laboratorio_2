@@ -7,7 +7,7 @@ using namespace std;
 class Actividad_Hoja : public Cmpnte_Proyecto
 {
 public:
-	Actividad_Hoja();
+	Actividad_Hoja(string planInicio, string planFin, string realInicio, string realFin);
 	~Actividad_Hoja();
 
 	void setPadre(Actividad_Grupo* p);
