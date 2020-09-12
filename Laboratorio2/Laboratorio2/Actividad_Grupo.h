@@ -72,6 +72,7 @@ Actividad_Grupo::Actividad_Grupo()
 	fecha_plan_fin = "";
 	fecha_real_ini = "";
 	fecha_real_fin = "";
+	padre = NULL;
 }
 
 Actividad_Grupo::~Actividad_Grupo()
@@ -171,9 +172,14 @@ inline string Actividad_Grupo::getFechaRealFin()
 
 inline void Actividad_Grupo::eliminarSubActividad(string nombre)
 {
-	if (find(actividades.begin(), actividades.end(), nombre) != actividades.end()) 
+	vector < Cmpnte_Proyecto >::iterator actIterator;
+	for (actIterator = actividades.begin(); actIterator != actividades.end(); actIterator++) 
 	{
-		actividades.erase(find(actividades.begin(), actividades.end(), nombre));
+		if (&actIterator->getNombre() == nombre) 
+		{
+			actividades.erase(actIterator);
+			actIterator = actividades.end();
+		}
 	}
 }
 

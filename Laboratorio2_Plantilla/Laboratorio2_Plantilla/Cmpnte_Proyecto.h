@@ -3,15 +3,24 @@
 
 using namespace std;
 
+class Actividad_Grupo;
+
 template<typename self>
 class Cmpnte_Proyecto 
 {
+protected:
+	Actividad_Grupo* padre;
+
+	
+
 public:
 	Cmpnte_Proyecto();
 	~Cmpnte_Proyecto();
 
 	//Se incluyen los metodos que son comunes para ambas clases
-
+	void setPadre(Actividad_Grupo* p);
+	Actividad_Grupo* getPadre();
+	
 	void eliminar();
 
 	void setNombre(string n);
@@ -37,6 +46,7 @@ public:
 	string getFechaRealFin();
 
 private:
+
 	string nombre;
 	string responsable;
 	string descripcion;
@@ -49,6 +59,13 @@ private:
 template<typename self>
 inline Cmpnte_Proyecto<self>::Cmpnte_Proyecto()
 {
+	responsable = "";
+	nombre = "";
+	fecha_plan_ini = "";
+	fecha_plan_fin = "";
+	fecha_real_ini = "";
+	fecha_real_fin = "";
+	padre = NULL;
 }
 
 template<typename self>
@@ -57,9 +74,25 @@ inline Cmpnte_Proyecto<self>::~Cmpnte_Proyecto()
 }
 
 template<typename self>
+inline void Cmpnte_Proyecto<self>::setPadre(Actividad_Grupo* p)
+{
+	padre = p;
+}
+
+template<typename self>
+inline Actividad_Grupo* Cmpnte_Proyecto<self>::getPadre()
+{
+	return padre;
+}
+
+template<typename self>
 inline void Cmpnte_Proyecto<self>::eliminar()
 {
-
+	if (padre != NULL)
+	{
+		padre->eliminarSubActividad(nombre);
+	}
+	~Actividad_Grupo();
 }
 
 template<typename self>
@@ -89,7 +122,19 @@ inline string Cmpnte_Proyecto<self>::getResponsable()
 template<typename self>
 inline void Cmpnte_Proyecto<self>::setResponsableAuto()
 {
-
+	if (padre != NULL) 
+	{
+		if (!padre->getResponsable().empty())
+		{
+			responsable = padre->getResponsable();
+		}
+		else
+		{
+			padre->setResponsableAuto();
+			responsable = padre->getResponsable();
+		}
+	}
+	
 }
 
 template<typename self>

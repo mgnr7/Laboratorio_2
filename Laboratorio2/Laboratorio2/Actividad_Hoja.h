@@ -62,6 +62,7 @@ Actividad_Hoja::Actividad_Hoja(string planInicio, string planFin, string realIni
 	fecha_plan_fin = planFin;
 	fecha_real_ini = realInicio;
 	fecha_real_fin = realFin;
+	padre = NULL;
 }
 
 Actividad_Hoja::~Actividad_Hoja()
