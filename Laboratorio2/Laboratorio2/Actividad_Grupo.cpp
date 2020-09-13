@@ -24,7 +24,7 @@ inline Actividad_Grupo* Actividad_Grupo::getPadre()
 	return padre;
 }
 
-inline void Actividad_Grupo::agregar(Cmpnte_Proyecto& actividad)
+inline void Actividad_Grupo::agregar(Cmpnte_Proyecto* actividad)
 {
 	actividades.push_back(actividad);
 }
@@ -106,15 +106,16 @@ inline string Actividad_Grupo::getFechaRealFin()
 
 inline void Actividad_Grupo::eliminarSubActividad(string nombre)
 {
-	vector < Cmpnte_Proyecto >::iterator actIterator;
+	vector < Cmpnte_Proyecto* >::iterator actIterator;
 	for (actIterator = actividades.begin(); actIterator != actividades.end(); actIterator++)
 	{
-		if (actIterator->getNombre().compare(nombre) == 0)
+		if ((*actIterator)->getNombre().compare(nombre) == 0)
 		{
 			actividades.erase(actIterator);
 			actIterator = actividades.end();
 		}
 	}
+
 }
 
 
@@ -123,12 +124,12 @@ La idea es llamar estos metodos desde el controlador en orden*/
 
 inline void Actividad_Grupo::calcularFechaRealInicio()
 {
-	string fechaMenor = actividades.at(0).getFechaRealInicio();
+	string fechaMenor = (*actividades.at(0)).getFechaRealInicio();
 
-	vector < Cmpnte_Proyecto >::iterator actIterator;
+	vector < Cmpnte_Proyecto* >::iterator actIterator;
 	for (actIterator = actividades.begin() + 1; actIterator != actividades.end(); actIterator++)
 	{
-		string fechaActual = actIterator->getFechaRealInicio();
+		string fechaActual = (*actIterator)->getFechaRealInicio();
 
 		int yactual = atoi(fechaActual.substr(0, 4).c_str());
 		int ymenor = atoi(fechaMenor.substr(0, 4).c_str());
@@ -162,12 +163,12 @@ inline void Actividad_Grupo::calcularFechaRealInicio()
 
 inline void Actividad_Grupo::calcularFechaRealFin()
 {
-	string fechaMayor = actividades.at(0).getFechaRealFin();
+	string fechaMayor = (*actividades.at(0)).getFechaRealFin();
 
-	vector < Cmpnte_Proyecto >::iterator actIterator;
+	vector < Cmpnte_Proyecto* >::iterator actIterator;
 	for (actIterator = actividades.begin() + 1; actIterator != actividades.end(); actIterator++)
 	{
-		string fechaActual = actIterator->getFechaRealFin();
+		string fechaActual = (*actIterator)->getFechaRealFin();
 		int yactual = atoi(fechaActual.substr(0, 4).c_str());
 		int ymayor = atoi(fechaMayor.substr(0, 4).c_str());
 
@@ -201,12 +202,12 @@ inline void Actividad_Grupo::calcularFechaRealFin()
 
 inline void Actividad_Grupo::calcularFechaPlanInicio()
 {
-	string fechaMenor = actividades.at(0).getFechaInicio();
+	string fechaMenor = (*actividades.at(0)).getFechaInicio();
 
-	vector < Cmpnte_Proyecto >::iterator actIterator;
+	vector < Cmpnte_Proyecto* >::iterator actIterator;
 	for (actIterator = actividades.begin() + 1; actIterator != actividades.end(); actIterator++)
 	{
-		string fechaActual = actIterator->getFechaInicio();
+		string fechaActual = (*actIterator)->getFechaInicio();
 		int yactual = atoi(fechaActual.substr(0, 4).c_str());
 		int ymenor = atoi(fechaMenor.substr(0, 4).c_str());
 
@@ -239,12 +240,12 @@ inline void Actividad_Grupo::calcularFechaPlanInicio()
 
 inline void Actividad_Grupo::calcularFechaPlanFin()
 {
-	string fechaMayor = actividades.at(0).getFechaFinal();
+	string fechaMayor = (*actividades.at(0)).getFechaFinal();
 
-	vector < Cmpnte_Proyecto >::iterator actIterator;
+	vector < Cmpnte_Proyecto* >::iterator actIterator;
 	for (actIterator = actividades.begin() + 1; actIterator != actividades.end(); actIterator++)
 	{
-		string fechaActual = actIterator->getFechaFinal();
+		string fechaActual = (*actIterator)->getFechaFinal();
 		int yactual = atoi(fechaActual.substr(0, 4).c_str());
 		int ymayor = atoi(fechaMayor.substr(0, 4).c_str());
 

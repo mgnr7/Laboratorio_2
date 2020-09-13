@@ -11,9 +11,6 @@ protected:
 
 public:
 
-	Cmpnte_Proyecto();
-	virtual ~Cmpnte_Proyecto();
-
 	virtual void setPadre(Actividad_Grupo* p) = 0;
 	virtual Actividad_Grupo* getPadre() = 0;
 	
@@ -41,12 +38,3 @@ public:
 	virtual void setFechaRealFin(string f) = 0;
 	virtual string getFechaRealFin() = 0;
 };
-
-Cmpnte_Proyecto::Cmpnte_Proyecto() 
-{
-	padre = NULL;
-}
-
-Cmpnte_Proyecto::~Cmpnte_Proyecto() 
-{
-}

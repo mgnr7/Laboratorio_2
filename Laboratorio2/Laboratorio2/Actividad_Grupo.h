@@ -15,7 +15,7 @@ public:
 	void setPadre(Actividad_Grupo* p) override;
 	Actividad_Grupo* getPadre() override;
 
-	void agregar(Cmpnte_Proyecto& actividad);
+	void agregar(Cmpnte_Proyecto* actividad);
 
 	void eliminar() override;
 
@@ -58,7 +58,7 @@ private:
 	
 	string descripcion;
 
-	vector < Cmpnte_Proyecto > actividades;
+	vector < Cmpnte_Proyecto* > actividades;
 
 };
 
