@@ -3,12 +3,13 @@
 using namespace std;
 
 #include "Cmpnte_Proyecto.h"
+#include "Actividad_Grupo.h"
 
 class Actividad_Hoja : public Cmpnte_Proyecto
 {
 public:
 	Actividad_Hoja(string planInicio, string planFin, string realInicio, string realFin);
-	~Actividad_Hoja();
+	virtual ~Actividad_Hoja();
 
 	void setPadre(Actividad_Grupo* p) override;
 	Actividad_Grupo* getPadre() override;

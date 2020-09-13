@@ -1,5 +1,4 @@
 #include "Actividad_Hoja.h"
-#include "Actividad_Grupo.h"
 
 
 //Una Actividad hoja siempre tiene que tener fechas para poder calcular la fecha real de las Actividades grupo.
@@ -11,7 +10,6 @@ Actividad_Hoja::Actividad_Hoja(string planInicio, string planFin, string realIni
 	fecha_plan_fin = planFin;
 	fecha_real_ini = realInicio;
 	fecha_real_fin = realFin;
-	padre = NULL;
 }
 
 Actividad_Hoja::~Actividad_Hoja()
@@ -34,8 +32,6 @@ inline void Actividad_Hoja::eliminar()
 	{
 		padre->eliminarSubActividad(nombre);
 	}
-
-	this->~Actividad_Hoja();
 }
 
 inline void Actividad_Hoja::setNombre(string n)

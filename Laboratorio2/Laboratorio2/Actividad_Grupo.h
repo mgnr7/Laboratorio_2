@@ -10,7 +10,7 @@ class Actividad_Grupo : public Cmpnte_Proyecto
 {
 public:
 	Actividad_Grupo();
-	~Actividad_Grupo();
+	virtual ~Actividad_Grupo();
 
 	void setPadre(Actividad_Grupo* p) override;
 	Actividad_Grupo* getPadre() override;

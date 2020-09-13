@@ -12,7 +12,7 @@ protected:
 public:
 
 	Cmpnte_Proyecto();
-	~Cmpnte_Proyecto();
+	virtual ~Cmpnte_Proyecto();
 
 	virtual void setPadre(Actividad_Grupo* p) = 0;
 	virtual Actividad_Grupo* getPadre() = 0;
