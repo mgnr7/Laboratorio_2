@@ -2,10 +2,13 @@
 //
 
 #include <iostream>
+#include "Controlador_Proyectos.h"
+#include "Controlador_Tipos_Proyecto.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Controlador_Proyectos cntr_proy;
+    Controlador_Tipos_Proyecto cntr_tipo;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
