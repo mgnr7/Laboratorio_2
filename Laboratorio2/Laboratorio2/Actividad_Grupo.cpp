@@ -133,7 +133,7 @@ void Actividad_Grupo::eliminarSubActividad(string nombre)
 		if ((*actIterator)->getNombre().compare(nombre) == 0)
 		{
 			actividades.erase(actIterator);
-			actIterator = actividades.end();
+			break;
 		}
 	}
 
