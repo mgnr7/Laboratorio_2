@@ -47,5 +47,8 @@
     <ClInclude Include="Actividad_Grupo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Controlador_Tipos_Proyecto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

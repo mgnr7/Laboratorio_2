@@ -148,6 +148,7 @@
     <ClInclude Include="Actividad_Hoja.h" />
     <ClInclude Include="Cmpnte_Proyecto.h" />
     <ClInclude Include="Controlador_Proyectos.h" />
+    <ClInclude Include="Controlador_Tipos_Proyecto.h" />
     <ClInclude Include="Proyecto.h" />
     <ClInclude Include="Tipo_Actividad.h" />
     <ClInclude Include="Tipo_Proyecto.h" />
