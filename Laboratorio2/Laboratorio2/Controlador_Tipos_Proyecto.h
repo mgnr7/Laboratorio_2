@@ -16,6 +16,8 @@ private:
 	std::vector<Tipo_Proyecto> tiposAlmacenados;
 };
 
+Controlador_Tipos_Proyecto cntr_tipo; // variable global 
+
 void Controlador_Tipos_Proyecto::crearTipo(std::string nombre) {
 	
 }
