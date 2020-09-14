@@ -27,6 +27,7 @@ Actividad_Grupo* Actividad_Grupo::getPadre()
 void Actividad_Grupo::agregar(Cmpnte_Proyecto* actividad)
 {
 	actividades.push_back(actividad);
+	actividad->setPadre(this);
 }
 
 void Actividad_Grupo::eliminar()
