@@ -16,17 +16,17 @@ Actividad_Hoja::~Actividad_Hoja()
 {
 }
 
-inline void Actividad_Hoja::setPadre(Actividad_Grupo* p)
+void Actividad_Hoja::setPadre(Actividad_Grupo* p)
 {
 	this->padre = p;
 }
 
-inline Actividad_Grupo* Actividad_Hoja::getPadre()
+Actividad_Grupo* Actividad_Hoja::getPadre()
 {
 	return padre;
 }
 
-inline void Actividad_Hoja::eliminar()
+void Actividad_Hoja::eliminar()
 {
 	if (padre != NULL)
 	{
@@ -34,27 +34,27 @@ inline void Actividad_Hoja::eliminar()
 	}
 }
 
-inline void Actividad_Hoja::setNombre(string n)
+void Actividad_Hoja::setNombre(string n)
 {
 	nombre = n;
 }
 
-inline string Actividad_Hoja::getNombre()
+string Actividad_Hoja::getNombre()
 {
 	return nombre;
 }
 
-inline void Actividad_Hoja::setResponsable(string r)
+void Actividad_Hoja::setResponsable(string r)
 {
 	responsable = r;
 }
 
-inline string Actividad_Hoja::getResponsable()
+string Actividad_Hoja::getResponsable()
 {
 	return responsable;
 }
 
-inline void Actividad_Hoja::setResponsableAuto()
+void Actividad_Hoja::setResponsableAuto()
 {
 	if (padre != NULL)
 	{
@@ -70,52 +70,52 @@ inline void Actividad_Hoja::setResponsableAuto()
 	}
 }
 
-inline void Actividad_Hoja::setDescripcion(string d)
+void Actividad_Hoja::setDescripcion(string d)
 {
 	descripcion = d;
 }
 
-inline string Actividad_Hoja::getDescripcion()
+string Actividad_Hoja::getDescripcion()
 {
 	return descripcion;
 }
 
-inline void Actividad_Hoja::setFechaInicio(string f)
+void Actividad_Hoja::setFechaInicio(string f)
 {
 	fecha_plan_ini = f;
 }
 
-inline string Actividad_Hoja::getFechaInicio()
+string Actividad_Hoja::getFechaInicio()
 {
 	return fecha_plan_ini;
 }
 
-inline void Actividad_Hoja::setFechaFinal(string f)
+void Actividad_Hoja::setFechaFinal(string f)
 {
 	fecha_plan_fin = f;
 }
 
-inline string Actividad_Hoja::getFechaFinal()
+string Actividad_Hoja::getFechaFinal()
 {
 	return fecha_plan_fin;
 }
 
-inline void Actividad_Hoja::setFechaRealInicio(string i)
+void Actividad_Hoja::setFechaRealInicio(string i)
 {
 	fecha_real_ini = i;
 }
 
-inline string Actividad_Hoja::getFechaRealInicio()
+string Actividad_Hoja::getFechaRealInicio()
 {
 	return fecha_real_ini;
 }
 
-inline void Actividad_Hoja::setFechaRealFin(string f)
+void Actividad_Hoja::setFechaRealFin(string f)
 {
 	fecha_real_fin = f;
 }
 
-inline string Actividad_Hoja::getFechaRealFin()
+string Actividad_Hoja::getFechaRealFin()
 {
 	return fecha_real_fin;
 }

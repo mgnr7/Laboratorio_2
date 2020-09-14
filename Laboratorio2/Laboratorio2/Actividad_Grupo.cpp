@@ -14,22 +14,22 @@ Actividad_Grupo::~Actividad_Grupo()
 {
 }
 
-inline void Actividad_Grupo::setPadre(Actividad_Grupo* p)
+void Actividad_Grupo::setPadre(Actividad_Grupo* p)
 {
 	this->padre = p;
 }
 
-inline Actividad_Grupo* Actividad_Grupo::getPadre()
+Actividad_Grupo* Actividad_Grupo::getPadre()
 {
 	return padre;
 }
 
-inline void Actividad_Grupo::agregar(Cmpnte_Proyecto* actividad)
+void Actividad_Grupo::agregar(Cmpnte_Proyecto* actividad)
 {
 	actividades.push_back(actividad);
 }
 
-inline void Actividad_Grupo::eliminar()
+void Actividad_Grupo::eliminar()
 {
 	if (padre != NULL)
 	{
@@ -37,27 +37,27 @@ inline void Actividad_Grupo::eliminar()
 	}
 }
 
-inline void Actividad_Grupo::setNombre(string n)
+void Actividad_Grupo::setNombre(string n)
 {
 	nombre = n;
 }
 
-inline string Actividad_Grupo::getNombre()
+string Actividad_Grupo::getNombre()
 {
 	return nombre;
 }
 
-inline void Actividad_Grupo::setResponsable(string r)
+void Actividad_Grupo::setResponsable(string r)
 {
 	responsable = r;
 }
 
-inline string Actividad_Grupo::getResponsable()
+string Actividad_Grupo::getResponsable()
 {
 	return responsable;
 }
 
-inline void Actividad_Grupo::setResponsableAuto()
+void Actividad_Grupo::setResponsableAuto()
 {
 	if (padre != NULL)
 	{
@@ -73,38 +73,58 @@ inline void Actividad_Grupo::setResponsableAuto()
 	}
 }
 
-inline void Actividad_Grupo::setDescripcion(string d)
+void Actividad_Grupo::setDescripcion(string d)
 {
 	descripcion = d;
 }
 
-inline string Actividad_Grupo::getDescripcion()
+string Actividad_Grupo::getDescripcion()
 {
 	return descripcion;
 }
 
-inline void Actividad_Grupo::setFechaRealInicio(string i)
+void Actividad_Grupo::setFechaInicio(string f)
+{
+	fecha_plan_ini = f;
+}
+
+string Actividad_Grupo::getFechaInicio()
+{
+	return fecha_plan_ini;
+}
+
+void Actividad_Grupo::setFechaFinal(string f)
+{
+	fecha_plan_fin = f;
+}
+
+string Actividad_Grupo::getFechaFinal()
+{
+	return fecha_plan_fin;
+}
+
+void Actividad_Grupo::setFechaRealInicio(string i)
 {
 	fecha_real_ini = i;
 }
 
-inline string Actividad_Grupo::getFechaRealInicio()
+string Actividad_Grupo::getFechaRealInicio()
 {
 	return fecha_real_ini;
 }
 
-inline void Actividad_Grupo::setFechaRealFin(string f)
+void Actividad_Grupo::setFechaRealFin(string f)
 {
 	fecha_real_fin = f;
 }
 
-inline string Actividad_Grupo::getFechaRealFin()
+string Actividad_Grupo::getFechaRealFin()
 {
 	return fecha_real_fin;
 }
 
 
-inline void Actividad_Grupo::eliminarSubActividad(string nombre)
+void Actividad_Grupo::eliminarSubActividad(string nombre)
 {
 	vector < Cmpnte_Proyecto* >::iterator actIterator;
 	for (actIterator = actividades.begin(); actIterator != actividades.end(); actIterator++)
@@ -122,11 +142,12 @@ inline void Actividad_Grupo::eliminarSubActividad(string nombre)
 /*Se asume que ya las actividades hijas tienen las fechas.
 La idea es llamar estos metodos desde el controlador en orden*/
 
-inline void Actividad_Grupo::calcularFechaRealInicio()
+void Actividad_Grupo::calcularFechaRealInicioFin()
 {
+	vector < Cmpnte_Proyecto* >::iterator actIterator;
+	
 	string fechaMenor = (*actividades.at(0)).getFechaRealInicio();
 
-	vector < Cmpnte_Proyecto* >::iterator actIterator;
 	for (actIterator = actividades.begin() + 1; actIterator != actividades.end(); actIterator++)
 	{
 		string fechaActual = (*actIterator)->getFechaRealInicio();
@@ -157,15 +178,11 @@ inline void Actividad_Grupo::calcularFechaRealInicio()
 			}
 		}
 	}
-
+	//Se asigna la fecha de inicio, de acuerdo a la fecha mas proxima entre todas las actividades hijas para iniciar la actividad.
 	fecha_real_ini = fechaMenor;
-}
 
-inline void Actividad_Grupo::calcularFechaRealFin()
-{
+
 	string fechaMayor = (*actividades.at(0)).getFechaRealFin();
-
-	vector < Cmpnte_Proyecto* >::iterator actIterator;
 	for (actIterator = actividades.begin() + 1; actIterator != actividades.end(); actIterator++)
 	{
 		string fechaActual = (*actIterator)->getFechaRealFin();
@@ -196,15 +213,18 @@ inline void Actividad_Grupo::calcularFechaRealFin()
 		}
 	}
 
+	//Se asgina la fecha mas lejana de finalizacion de todas las actividades hijas como fecha de finalizacion de la actividad 
 	fecha_real_fin = fechaMayor;
 
 }
 
-inline void Actividad_Grupo::calcularFechaPlanInicio()
+void Actividad_Grupo::calcularFechaPlanInicioFin()
 {
+	vector < Cmpnte_Proyecto* >::iterator actIterator;
+	
+
 	string fechaMenor = (*actividades.at(0)).getFechaInicio();
 
-	vector < Cmpnte_Proyecto* >::iterator actIterator;
 	for (actIterator = actividades.begin() + 1; actIterator != actividades.end(); actIterator++)
 	{
 		string fechaActual = (*actIterator)->getFechaInicio();
@@ -236,13 +256,9 @@ inline void Actividad_Grupo::calcularFechaPlanInicio()
 	}
 
 	fecha_plan_ini = fechaMenor;
-}
 
-inline void Actividad_Grupo::calcularFechaPlanFin()
-{
+
 	string fechaMayor = (*actividades.at(0)).getFechaFinal();
-
-	vector < Cmpnte_Proyecto* >::iterator actIterator;
 	for (actIterator = actividades.begin() + 1; actIterator != actividades.end(); actIterator++)
 	{
 		string fechaActual = (*actIterator)->getFechaFinal();
@@ -274,4 +290,5 @@ inline void Actividad_Grupo::calcularFechaPlanFin()
 	}
 
 	fecha_plan_fin = fechaMayor;
+
 }

@@ -29,20 +29,23 @@ public:
 	void setDescripcion(string d) override;
 	string getDescripcion() override;
 
+	void setFechaInicio(string f);
+	string getFechaInicio();
+
+	void setFechaFinal(string f);
+	string getFechaFinal();
+
 	void setFechaRealInicio(string i) override;
 	string getFechaRealInicio() override;
 
 	void setFechaRealFin(string f) override;
 	string getFechaRealFin() override;
 
-
 	void eliminarSubActividad(string nombre);
 
-	void calcularFechaRealInicio();
-	void calcularFechaRealFin();
+	void calcularFechaRealInicioFin();
 
-	void calcularFechaPlanInicio();
-	void calcularFechaPlanFin();
+	void calcularFechaPlanInicioFin();
 
 private:
 	
