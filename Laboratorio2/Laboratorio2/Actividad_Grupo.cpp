@@ -205,7 +205,7 @@ void Actividad_Grupo::calcularFechaRealInicioFin()
 			{
 				int dactual = atoi(fechaActual.substr(8, 2).c_str());
 				int dmayor = atoi(fechaMayor.substr(8, 2).c_str());
-				if (dactual < dmayor)
+				if (dactual > dmayor)
 				{
 					fechaMayor = fechaActual;
 				}
