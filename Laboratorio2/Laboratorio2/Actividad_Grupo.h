@@ -29,11 +29,11 @@ public:
 	void setDescripcion(string d) override;
 	string getDescripcion() override;
 
-	void setFechaInicio(string f);
-	string getFechaInicio();
+	void setFechaInicio(string f) override;
+	string getFechaInicio() override;
 
-	void setFechaFinal(string f);
-	string getFechaFinal();
+	void setFechaFinal(string f) override;
+	string getFechaFinal() override;
 
 	void setFechaRealInicio(string i) override;
 	string getFechaRealInicio() override;

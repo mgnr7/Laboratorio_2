@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -10,6 +11,15 @@ class Cmpnte_Proyecto
 {
 protected:
 	Actividad_Grupo* padre;
+	string nombre;
+	string responsable;
+	string descripcion;
+	string fecha_plan_ini;
+	string fecha_plan_fin;
+	string fecha_real_ini;
+	string fecha_real_fin;
+
+	vector < Cmpnte_Proyecto* > actividades;
 
 public:
 	Cmpnte_Proyecto();
@@ -20,6 +30,7 @@ public:
 	Actividad_Grupo* getPadre();
 	
 	void eliminar();
+	void agregar(Cmpnte_Proyecto* actividad);
 
 	void setNombre(string n);
 	string getNombre();
@@ -43,15 +54,6 @@ public:
 	void setFechaRealFin(string f);
 	string getFechaRealFin();
 
-private:
-
-	string nombre;
-	string responsable;
-	string descripcion;
-	string fecha_plan_ini;
-	string fecha_plan_fin;
-	string fecha_real_ini;
-	string fecha_real_fin;
 };
 
 template<typename self>
@@ -90,6 +92,12 @@ inline void Cmpnte_Proyecto<self>::eliminar()
 	{
 		padre->eliminarSubActividad(nombre);
 	}
+}
+
+template<typename self>
+inline void Cmpnte_Proyecto<self>::agregar(Cmpnte_Proyecto* actividad)
+{
+	actividades.push_back(actividad);
 }
 
 template<typename self>
