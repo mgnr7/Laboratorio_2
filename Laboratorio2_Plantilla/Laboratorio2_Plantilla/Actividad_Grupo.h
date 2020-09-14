@@ -21,11 +21,11 @@ private:
 	vector < Cmpnte_Proyecto > actividades;
 };
 
-Actividad_Grupo::Actividad_Grupo() 
+Actividad_Grupo::Actividad_Grupo()
 {
 }
 
-Actividad_Grupo::~Actividad_Grupo() 
+Actividad_Grupo::~Actividad_Grupo()
 {
 }
 
@@ -34,7 +34,7 @@ inline void Actividad_Grupo::eliminarSubActividad(string nombre)
 	vector < Cmpnte_Proyecto >::iterator actIterator;
 	for (actIterator = actividades.begin(); actIterator != actividades.end(); actIterator++)
 	{
-		if (&actIterator->getNombre() == nombre)
+		if (actIterator->getNombre().compare(nombre) == 0)
 		{
 			actividades.erase(actIterator);
 			actIterator = actividades.end();
@@ -46,4 +46,3 @@ inline void Actividad_Grupo::agregar(Cmpnte_Proyecto& actividad)
 {
 	actividades.push_back(actividad);
 }
-

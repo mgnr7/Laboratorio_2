@@ -10,10 +10,10 @@ public:
 
 };
 
-Actividad_Hoja::Actividad_Hoja() 
+Actividad_Hoja::Actividad_Hoja()
 {
 }
 
-Actividad_Hoja::~Actividad_Hoja() 
+Actividad_Hoja::~Actividad_Hoja()
 {
 }

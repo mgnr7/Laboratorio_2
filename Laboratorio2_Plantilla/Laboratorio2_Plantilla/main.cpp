@@ -2,10 +2,13 @@
 //
 
 #include <iostream>
+#include "Cmpnte_Proyecto.h"
+#include "Actividad_Grupo.h"
+#include "Actividad_Hoja.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Actividad_Grupo n1;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

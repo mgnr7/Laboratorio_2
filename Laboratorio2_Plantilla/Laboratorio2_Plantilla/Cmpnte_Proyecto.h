@@ -90,7 +90,6 @@ inline void Cmpnte_Proyecto<self>::eliminar()
 	{
 		padre->eliminarSubActividad(nombre);
 	}
-	~Actividad_Grupo();
 }
 
 template<typename self>
@@ -120,7 +119,7 @@ inline string Cmpnte_Proyecto<self>::getResponsable()
 template<typename self>
 inline void Cmpnte_Proyecto<self>::setResponsableAuto()
 {
-	if (padre != NULL) 
+	if (padre != NULL)
 	{
 		if (!padre->getResponsable().empty())
 		{
@@ -132,7 +131,7 @@ inline void Cmpnte_Proyecto<self>::setResponsableAuto()
 			responsable = padre->getResponsable();
 		}
 	}
-	
+
 }
 
 template<typename self>
@@ -186,7 +185,7 @@ inline string Cmpnte_Proyecto<self>::getFechaRealInicio()
 template<typename self>
 inline void Cmpnte_Proyecto<self>::setFechaRealFin(string f)
 {
-	fecha_real_fin = f
+	fecha_real_fin = f;
 }
 
 template<typename self>
