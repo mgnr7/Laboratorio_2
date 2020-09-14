@@ -19,8 +19,6 @@ protected:
 	string fecha_real_ini;
 	string fecha_real_fin;
 
-	vector < Cmpnte_Proyecto* > actividades;
-
 public:
 	Cmpnte_Proyecto();
 	~Cmpnte_Proyecto();
@@ -30,7 +28,6 @@ public:
 	Actividad_Grupo* getPadre();
 	
 	void eliminar();
-	void agregar(Cmpnte_Proyecto* actividad);
 
 	void setNombre(string n);
 	string getNombre();
@@ -92,12 +89,6 @@ inline void Cmpnte_Proyecto<self>::eliminar()
 	{
 		padre->eliminarSubActividad(nombre);
 	}
-}
-
-template<typename self>
-inline void Cmpnte_Proyecto<self>::agregar(Cmpnte_Proyecto* actividad)
-{
-	actividades.push_back(actividad);
 }
 
 template<typename self>
