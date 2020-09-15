@@ -7,7 +7,6 @@ class Tipo_Proyecto {
 
 public:
 	Tipo_Proyecto(std::string nombre);
-	~Tipo_Proyecto();
 	std::string getNombre();
 	void setNombre(std::string nombre);
 
@@ -20,10 +19,6 @@ private:
 
 Tipo_Proyecto::Tipo_Proyecto(std::string nombre) {
 	this->setNombre(nombre);
-}
-
-Tipo_Proyecto::~Tipo_Proyecto() {
-
 }
 
 std::string Tipo_Proyecto::getNombre() {
