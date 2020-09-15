@@ -12,6 +12,7 @@ Actividad_Grupo::Actividad_Grupo()
 
 Actividad_Grupo::~Actividad_Grupo()
 {
+	delete this->padre;
 }
 
 void Actividad_Grupo::setPadre(Actividad_Grupo* p)

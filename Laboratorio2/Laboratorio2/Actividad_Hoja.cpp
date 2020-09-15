@@ -14,6 +14,7 @@ Actividad_Hoja::Actividad_Hoja(string planInicio, string planFin, string realIni
 
 Actividad_Hoja::~Actividad_Hoja()
 {
+	delete this->padre;
 }
 
 void Actividad_Hoja::setPadre(Actividad_Grupo* p)
