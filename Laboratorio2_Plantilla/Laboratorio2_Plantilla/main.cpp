@@ -18,7 +18,7 @@ int main()
  Actividad_Grupo a2;
  Actividad_Grupo b1;
 
- Actividad_Hoja b2("2020-09-15", "2020-09-20", "2020-09-15", "2020-09-20");
+ Actividad_Hoja b2("2020-09-15", "2020-09-30", "2020-09-15", "2020-09-20");
  Actividad_Hoja b3("2020-09-14", "2020-09-25", "2020-09-16", "2020-09-27");
  Actividad_Hoja b4("2020-09-19", "2020-09-31", "2020-09-19", "2020-09-31");
 
@@ -58,13 +58,17 @@ int main()
 
  
 
- //a2.calcularFechaPlanInicioFin();
- //a2.calcularFechaRealInicioFin();
-
- //cout << "InicioPlan: " << a2.getFechaInicio() << endl;
- //cout << "Final plan: " << a2.getFechaFinal() << endl;
- //cout << "Inicio Real: " << a2.getFechaRealInicio() << endl;
- //cout << "Final Real: " << a2.getFechaRealFin() << endl;
+ 
+// a2.calcularFechaRealInicioFin();
+//
+// cout << "Inicio Real: " << a2.getFechaRealInicio() << endl;
+// cout << "Final Real: " << a2.getFechaRealFin() << endl;
+//
+//
+//
+//a2.calcularFechaPlanInicioFin();
+// cout << "Inicio plan: " << a2.getFechaInicio() << endl;
+// cout << "Final plan: " << a2.getFechaFinal() << endl;
 
 }
 
